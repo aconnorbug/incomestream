@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>incomestream</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+</head>
+
+<body style="background: rgb(28,28,34);">
+    <div class="container">
+        <h1 style="text-align: center;color: rgb(255,255,255);">IncomeStream</h1>
+        <p style="text-align: center;color: rgba(255,255,255,0.43);">@aconnorbug</p>
+    </div>
+    <div class="container" style="text-align: center;">
+        <div class="row">
+            <div class="col">
+                <section class="py-4 py-xl-5">
+                    <div class="container">
+                        <div class="text-white border rounded border-0 p-4 p-md-5" style="background: rgba(33,37,41,0);margin-top: -89px;">
+                            <h2 class="fw-bold text-white mb-3">About</h2>
+                            <p class="mb-4"><strong>IncomeStream </strong>is a utility meant to help you calculate finances for your pay periods.<br>For a tutorial on using IncomeStream, please check our&nbsp;<a href="https://github.com/aconnorbug/incomestream">Documentation</a>&nbsp;on GitHub.<br><br>Note: If you want to modify a value, create a new one with the same name.</p><button class="btn btn-primary" id="json_copy" type="button" style="margin-left: 10px;background: rgba(13,110,253,0);border-color: rgb(255,255,255);margin-right: 10px;">Copy JSON</button><input type="text" id="json_input" name="JSONInput" placeholder="JSON Input" style="background: rgba(255,255,255,0);border-color: rgb(255,255,255);border-radius: 5px;text-align: center;color: rgb(255,255,255);"><button class="btn btn-primary" id="json_submit" type="button" style="margin-left: 10px;background: rgba(13,110,253,0);border-color: rgb(255,255,255);margin-right: 10px;">Submit JSON</button>
+                            <div class="row">
+                                <div class="col">
+                                    <section class="py-4 py-xl-5" style="border-width: 1px;border-color: rgb(255,255,255);">
+                                        <div class="container">
+                                            <div class="text-white bg-dark border rounded border-0 p-4 p-md-5" style="border: 2px solid rgb(255,255,255) ;">
+                                                <h2 class="fw-bold text-white mb-3" style="font-size: 24px;">Income Streams</h2>
+                                                <p id="para_inputStreams" class="mb-4"></p>
+                                                <div class="my-3">
+                                                    <div><a class="btn btn-primary" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-7" href="#collapse-7" role="button" style="background: rgba(13,110,253,0);border-color: rgb(255,255,255);">Create Income Stream</a>
+                                                        <div class="collapse" id="collapse-7">
+                                                            <div class="text-center"><input type="text" id="incomeStreamName" name="Stream Name" placeholder="Income Stream Name" style="margin-top: 10px;background: rgba(255,255,255,0);border-color: rgb(255,255,255);border-radius: 5px;text-align: center;margin-right: 10px;color: rgb(255,255,255);"><input type="text" id="incomeStreamAmount" name="Stream Amount" placeholder="Income Stream Amount" style="margin-top: 10px;background: rgba(255,255,255,0);border-color: rgb(255,255,255);border-radius: 5px;text-align: center;margin-right: 10px;color: rgb(255,255,255);"></div><button class="btn btn-primary" id="submit_incomeStream" type="button" style="margin-top: 10px;background: rgba(13,110,253,0);border-color: rgb(255,255,255);">Submit Income Stream</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p id="para_totalInputStreams">Total Income: $0</p>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="col">
+                                    <section class="py-4 py-xl-5" style="border-width: 1px;border-color: rgb(255,255,255);">
+                                        <div class="container">
+                                            <div class="text-white bg-dark border rounded border-0 p-4 p-md-5" style="border: 2px solid rgb(255,255,255) ;">
+                                                <h2 class="fw-bold text-white mb-3" style="font-size: 24px;">Bills</h2>
+                                                <p id="para_bills" class="mb-4"></p>
+                                                <div class="my-3">
+                                                    <div><a class="btn btn-primary" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-1" role="button" style="background: rgba(13,110,253,0);border-color: rgb(255,255,255);">Create Bill</a>
+                                                        <div class="collapse" id="collapse-1">
+                                                            <div class="text-center"><input type="text" id="billName" name="Bill Name" placeholder="Bill Name" style="margin-top: 10px;background: rgba(255,255,255,0);border-color: rgb(255,255,255);border-radius: 5px;text-align: center;margin-right: 10px;color: rgb(255,255,255);"><input type="text" id="billCost" name="Bill Cost" placeholder="Bill Cost" style="margin-top: 10px;background: rgba(255,255,255,0);border-color: rgb(255,255,255);border-radius: 5px;text-align: center;margin-right: 10px;color: rgb(255,255,255);"></div><button class="btn btn-primary" id="submit_bill" type="button" style="margin-top: 10px;background: rgba(13,110,253,0);border-color: rgb(255,255,255);">Submit Bill</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p id="para_totalBills">Total Bill Cost: $0</p>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <section class="py-4 py-xl-5" style="border-width: 1px;border-color: rgb(255,255,255);">
+                                        <div class="container">
+                                            <div class="text-white bg-dark border rounded border-0 p-4 p-md-5" style="border: 2px solid rgb(255,255,255) ;">
+                                                <h2 class="fw-bold text-white mb-3" style="font-size: 24px;">Savings Profiles</h2>
+                                                <p id="para_savingsProfiles" class="mb-4"></p>
+                                                <div class="my-3">
+                                                    <div style="margin-top: 5px;"><a class="btn btn-primary" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" href="#collapse-2" role="button" style="background: rgba(13,110,253,0);border-color: rgb(255,255,255);">Create Savings Profile</a>
+                                                        <div class="collapse" id="collapse-2">
+                                                            <div class="text-center"><input type="text" id="savingsProfileName" name="Profile Name" placeholder="Savings Profile Name" style="margin-top: 10px;background: rgba(255,255,255,0);border-color: rgb(255,255,255);border-radius: 5px;text-align: center;margin-right: 10px;color: rgb(255,255,255);"><input type="text" id="savingsProfileAmount" name="Profile Amount" placeholder="Savings Profile Amount" style="margin-top: 10px;background: rgba(255,255,255,0);border-color: rgb(255,255,255);border-radius: 5px;text-align: center;margin-right: 10px;color: rgb(255,255,255);"><input type="text" id="savingsProfileCurrent" name="In Savings" placeholder="Current In Savings" style="margin-top: 10px;background: rgba(255,255,255,0);border-color: rgb(255,255,255);border-radius: 5px;text-align: center;margin-right: 10px;color: rgb(255,255,255);"></div><button class="btn btn-primary" id="submit_savingsProfile" type="button" style="margin-top: 10px;background: rgba(13,110,253,0);border-color: rgb(255,255,255);">Submit Savings Profile</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p id="para_totalSavings">Total Savings (this pay period): $0</p>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="col">
+                                    <section class="py-4 py-xl-5" style="border-width: 1px;border-color: rgb(255,255,255);">
+                                        <div class="container">
+                                            <div class="text-white bg-dark border rounded border-0 p-4 p-md-5" style="border: 2px solid rgb(255,255,255) ;">
+                                                <h2 class="fw-bold text-white mb-3" style="font-size: 24px;">Output</h2>
+                                                <p id="para_output" class="mb-4" style="text-align: left;"></p>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/index.js"></script>
+</body>
+
+</html>
